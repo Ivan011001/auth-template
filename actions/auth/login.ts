@@ -2,8 +2,10 @@
 
 import { AuthError } from "next-auth";
 
+import { db } from "@/lib/db";
+
 import * as z from "zod";
-import { loginSchema } from "@/schemas";
+import { loginSchema } from "@/schemas/auth/loginSchema";
 
 import { signIn } from "@/auth";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
@@ -12,10 +14,10 @@ import {
   generateTwoFactorToken,
   generateVerificationToken,
 } from "@/lib/tokens";
+
 import { findUserByEmail } from "@/data/user";
 import { sendTwoFactorEmail, sendVerificationEmail } from "@/lib/mail";
 import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
-import { db } from "@/lib/db";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
 
 export const login = async (

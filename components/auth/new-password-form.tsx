@@ -22,8 +22,8 @@ import {
   FormMessage,
 } from "../ui/form";
 
-import { newPasswordSchema } from "@/schemas";
-import { newPassword } from "@/actions/new-password";
+import { newPasswordSchema } from "@/schemas/auth/newPasswordSchema";
+import { newPassword } from "@/actions/auth/new-password";
 
 const NewPasswordForm = () => {
   const searchParams = useSearchParams();

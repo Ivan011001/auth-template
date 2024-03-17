@@ -2,13 +2,14 @@
 
 import bcrypt from "bcryptjs";
 
+import { db } from "@/lib/db";
+
 import * as z from "zod";
-import { registerSchema } from "@/schemas";
+import { registerSchema } from "@/schemas/auth/registerSchema";
 
 import { findUserByEmail } from "@/data/user";
 import { generateVerificationToken } from "@/lib/tokens";
 
-import { db } from "@/lib/db";
 import { sendVerificationEmail } from "@/lib/mail";
 
 export const register = async (values: z.infer<typeof registerSchema>) => {

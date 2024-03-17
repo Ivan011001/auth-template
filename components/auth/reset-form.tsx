@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
 import * as z from "zod";
+import { resetSchema } from "@/schemas/auth/resetSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import ErrorMessage from "../error-message";
@@ -21,8 +22,7 @@ import {
   FormMessage,
 } from "../ui/form";
 
-import { resetSchema } from "@/schemas";
-import { reset } from "@/actions/reset";
+import { reset } from "@/actions/auth/reset";
 
 const ResetForm = () => {
   const [isPending, startTransition] = useTransition();

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { registerSchema } from "@/schemas";
+import { registerSchema } from "@/schemas/auth/registerSchema";
 
 import CardWrapper from "./card-wraper";
 
@@ -23,7 +23,7 @@ import {
 import ErrorMessage from "../error-message";
 import SuccessMessage from "../success-message";
 
-import { register } from "@/actions/register";
+import { register } from "@/actions/auth/register";
 
 const LoginForm = () => {
   const [isPending, startTransition] = useTransition();

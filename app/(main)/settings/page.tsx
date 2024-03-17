@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 import { useCurrentUser } from "@/hooks/use-current-user";
 
 import * as z from "zod";
-import { settingsSchema } from "@/schemas";
+import { settingsSchema } from "@/schemas/auth/settingsSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import ErrorMessage from "@/components/error-message";
@@ -33,7 +33,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { settings } from "@/actions/settings";
+import { settings } from "@/actions/auth/settings";
 
 import { UserRole } from "@prisma/client";
 

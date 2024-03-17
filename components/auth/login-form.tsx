@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { loginSchema } from "@/schemas";
+import { loginSchema } from "@/schemas/auth/loginSchema";
 
 import CardWrapper from "./card-wraper";
 
@@ -25,7 +25,7 @@ import {
 import ErrorMessage from "../error-message";
 import SuccessMessage from "../success-message";
 
-import { login } from "@/actions/login";
+import { login } from "@/actions/auth/login";
 
 const LoginForm = () => {
   const searchParams = useSearchParams();
